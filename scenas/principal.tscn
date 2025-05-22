@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://3w5iv11fhnxq"]
+
+[ext_resource type="Texture2D" uid="uid://bp8ylueanynyk" path="res://FBAssets/FBsprites/base.png" id="1_t5fw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e318q"]
+size = Vector2(401, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3pxq"]
+size = Vector2(389, 112)
+
+[node name="Principal" type="Node2D"]
+
+[node name="Cielo" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cielo"]
+position = Vector2(190.5, 2.5)
+shape = SubResource("RectangleShape2D_e318q")
+
+[node name="Suelo" type="StaticBody2D" parent="."]
+position = Vector2(172, 590)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Suelo"]
+position = Vector2(22.5, 1)
+scale = Vector2(1.15774, 1.01786)
+texture = ExtResource("1_t5fw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(22.5, 2)
+shape = SubResource("RectangleShape2D_m3pxq")
