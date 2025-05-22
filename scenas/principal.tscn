@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://3w5iv11fhnxq"]
+[gd_scene load_steps=5 format=3 uid="uid://3w5iv11fhnxq"]
 
 [ext_resource type="Texture2D" uid="uid://bp8ylueanynyk" path="res://FBAssets/FBsprites/base.png" id="1_t5fw1"]
+[ext_resource type="PackedScene" uid="uid://b773l8ch3u5cp" path="res://scenas/player.tscn" id="2_d1qsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e318q"]
 size = Vector2(401, 25)
@@ -29,3 +30,5 @@ texture = ExtResource("1_t5fw1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo"]
 position = Vector2(22.5, 2)
 shape = SubResource("RectangleShape2D_m3pxq")
+
+[node name="Player" parent="." instance=ExtResource("2_d1qsw")]
