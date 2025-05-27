@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://3w5iv11fhnxq"]
+[gd_scene load_steps=6 format=3 uid="uid://3w5iv11fhnxq"]
 
+[ext_resource type="Script" path="res://Script/principal.gd" id="1_5i6vn"]
 [ext_resource type="Texture2D" uid="uid://bp8ylueanynyk" path="res://FBAssets/FBsprites/base.png" id="1_t5fw1"]
 [ext_resource type="PackedScene" uid="uid://b773l8ch3u5cp" path="res://scenas/player.tscn" id="2_d1qsw"]
 
@@ -10,6 +11,7 @@ size = Vector2(401, 25)
 size = Vector2(389, 112)
 
 [node name="Principal" type="Node2D"]
+script = ExtResource("1_5i6vn")
 
 [node name="Cielo" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
@@ -32,3 +34,8 @@ position = Vector2(22.5, 2)
 shape = SubResource("RectangleShape2D_m3pxq")
 
 [node name="Player" parent="." instance=ExtResource("2_d1qsw")]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
