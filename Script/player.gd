@@ -14,7 +14,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if Input.is_action_just_pressed("volar"):
 		linear_velocity = Vector2.ZERO
 		apply_central_impulse(Vector2(0,-speed))
-		$AnimatedSprite2D.play("arriba")
+		$AnimatedSprite2D.play("movimiento")
 		
 		
 func game_over():

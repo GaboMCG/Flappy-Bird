@@ -16,7 +16,7 @@ size = Vector2(44, 125)
 script = ExtResource("1_g7rg3")
 
 [node name="tuberia1" type="Area2D" parent="."]
-position = Vector2(300, 80)
+position = Vector2(168, -76)
 rotation = 3.14159
 metadata/_edit_group_ = true
 
@@ -28,7 +28,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_d10dj")
 
 [node name="tuberia2" type="Area2D" parent="."]
-position = Vector2(300, 525)
+position = Vector2(168, 369)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="tuberia2"]
@@ -39,7 +39,7 @@ position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_yke0c")
 
 [node name="score" type="Area2D" parent="."]
-position = Vector2(300, 305)
+position = Vector2(168, 149)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="score"]
