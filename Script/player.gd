@@ -20,8 +20,13 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 func game_over():
 	get_tree().paused = true
 	$"../mensaje".show()
-	
+	$"../mensaje/Gameover".show()
 	
 func raise_score():
 	puntaje += 1
 	$"../Label".text = str(puntaje)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("tierra"):
+		game_over()

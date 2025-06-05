@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3w5iv11fhnxq"]
+[gd_scene load_steps=11 format=3 uid="uid://3w5iv11fhnxq"]
 
 [ext_resource type="Script" path="res://Script/principal.gd" id="1_5i6vn"]
 [ext_resource type="Texture2D" uid="uid://bp8ylueanynyk" path="res://FBAssets/FBsprites/base.png" id="1_t5fw1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmwx4aoi57dfn" path="res://scenas/parallax_background.tscn" id="4_jrnvj"]
 [ext_resource type="Texture2D" uid="uid://bn83we6gmhhvu" path="res://FBAssets/FBsprites/message.png" id="5_ea2r7"]
 [ext_resource type="Script" path="res://scenas/mensaje.gd" id="6_ha0ur"]
+[ext_resource type="Texture2D" uid="uid://de3hegqvsvx7t" path="res://FBAssets/FBsprites/gameover.png" id="7_t26c6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e318q"]
 size = Vector2(401, 25)
@@ -21,14 +22,14 @@ font_color = Color(1, 0.647059, 0, 1)
 [node name="Principal" type="Node2D"]
 script = ExtResource("1_5i6vn")
 
-[node name="Cielo" type="StaticBody2D" parent="."]
+[node name="Cielo" type="StaticBody2D" parent="." groups=["tierra"]]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cielo"]
 position = Vector2(190.5, 2.5)
 shape = SubResource("RectangleShape2D_e318q")
 
-[node name="Suelo" type="StaticBody2D" parent="."]
+[node name="Suelo" type="StaticBody2D" parent="." groups=["tierra"]]
 position = Vector2(172, 590)
 metadata/_edit_group_ = true
 
@@ -65,5 +66,9 @@ z_index = 1
 position = Vector2(172, 346)
 texture = ExtResource("5_ea2r7")
 script = ExtResource("6_ha0ur")
+
+[node name="Gameover" type="Sprite2D" parent="mensaje"]
+position = Vector2(0, -174)
+texture = ExtResource("7_t26c6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
